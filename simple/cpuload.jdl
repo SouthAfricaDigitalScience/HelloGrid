@@ -1,0 +1,102 @@
+[
+#######################################################################
+# JDL-Cpuload 							#                          
+# Version: 1.0                                                        #
+# Author: T.Bezuidenhout                                              #
+# Institute: University of the Free State                             #
+# Email: bezuidenhoutt@ufs.ac.za                                      #
+# Description: The JDL for a simple example of Hostname               #
+# link on JDL: https://grid.ct.infn.it/twiki/bin/view/GILDA/MoreOnJDL #
+#######################################################################
+
+#Changelog
+# 27/06/2011 : Bruce Becker | minor revision of comments and JDL
+
+############
+#Attributes#
+############
+
+################
+# Type         #
+################
+Type = "Job";
+JobType = "Parametric";
+
+  ##########################################################################################
+  #Requirements                                                 			   #
+  #Put here any specific requirements that your job might have, for example that it should #
+  # run at the University of Johannesburg.                       			   #
+  #Example:                                                      			   #
+  #Requirements = "other.GlueCEUniqueID=="glite-ce.grid.uj.ac.za:8443/cream-pbs-sagrid";   #
+  ##########################################################################################
+
+#Executable                                                    #
+#This is the name of the script to be run on the Worker Node.  #
+#Example:                                                      #
+#Executable = "Example.sh";                                    #
+################################################################
+Executable = "cpuload.sh";
+JobType="Parametric"; 
+######################################
+#Parametric			     
+#To split the single job into many sub-jobs with a common input
+######################################
+Parameters = 100;
+ParameterStep = 1;
+ParameterStart= 0;
+
+###############################
+#Arguments			#
+#These are command- line arguments#
+###############################
+Arguments = "1000 _PARAM_ ";
+
+#########################################################
+#StdOutput and StdError                                 #
+#Specifies the name of where the Output and Error should#
+#be directed                                            #
+#Example:                                               #
+#StdOutput = "Example.out";                             #
+#StdError = "Example.out";                              #
+#########################################################
+StdOutput = "std.out";
+StdError = "std.err";
+
+#########################################################
+#InputSandbox                                           #
+#Specifies the path where your files should be copied   #
+#Example:                                               #
+#InputSandbox = "hostname.sh";                          #
+#########################################################
+InputSandbox = {"cpuload.sh"};
+
+#########################################################
+#OutputSandbox                                          #
+#indicates the files you want to be copied back after   #
+#job execution                                          #
+#Example:                                               #
+#OutputSandbox = {"Example.out"};                       #
+#########################################################
+OutputSandbox = {"std.out","std.err"};
+
+##########################################################################
+#Perusal								   #
+#Job perusal is the ability to view output from a job while it is running#
+#Example:								   #
+#PerusalFileEnable = True;
+#PerusalTimeInterval = 60;
+##########################################################################
+PerusalFileEnable = True;
+PerusalTimeInterval = 60;
+
+######################################################
+#ShallowRetryCount                                   #
+#Specifies the number of retries, in case of failures#
+
+#Example:
+#ShallowRetryCount = 1;                              #
+######################################################
+ShallowRetryCount = 3;
+Requirements =  other.GlueCEUniqueID == "cream-ce.core.wits.ac.za:8443/cream-pbs-sagrid" || other.GlueCEUniqueID == "grid-ce.chpc.ac.za:8443/cream-pbs-sagrid" || other.GlueCEUniqueID == "ce01.eela.if.ufrj.br:8443/cream-pbs-sagrid";
+]
+
