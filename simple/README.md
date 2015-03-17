@@ -22,8 +22,8 @@ The JDL also tells the grid how to deal with input and output, so that you can t
 ***Note : We are using the dteam and sagrid.ac.za VOs here - be sure to check that you are using a VO to which you actually belong***
 
   1. Get a proxy: `voms-proxy-init --voms sagrid.ac.za`.
-    * Example Output :
-```bash
+    * Example Output:
+      ```bash
 voms-proxy-init --voms sagrid.ac.za
 Enter GRID pass phrase:
 Your identity: /C=IT/O=INFN/OU=Personal Certificate/L=ZA-MERAKA/CN=Bruce Becker
@@ -32,16 +32,22 @@ Contacting  voms.sagrid.ac.za:15003 [/C=IT/O=INFN/OU=Host/L=ZA-UFS/CN=voms.sagri
 Creating proxy .............................................................................................. Done
 Your proxy is valid until Wed Mar 18 01:02:55 2015
 ```
-  2. Find an available site: `lcg-infosites --vo dteam`
+
+  1. Find an available site: `lcg-infosites --vo dteam`
     * Example Output:
-```bash
-lcg-infosites --vo dteam
+     `lcg-infosites --vo dteam
 #   CPU	   Free	Total Jobs	Running	Waiting	ComputingElement
 ----------------------------------------------------------------
      24	     21	         0	      0	      0	srvslngrd007.uct.ac.za:8443/cream-pbs-sagrid
-```
+```bash
   2. Submit the job : `glite-ce-job-submit `
     * Example Output:
+```bash
+https://glite-ce.grid.uj.ac.za:8443/CREAM028493431
+```
+  3. Check on the status of the job: `glite-ce-job-status <jobid>`
+    * Example
+
 ```
 glite-ce-job-status https://glite-ce.grid.uj.ac.za:8443/CREAM028493431
 
@@ -49,3 +55,4 @@ glite-ce-job-status https://glite-ce.grid.uj.ac.za:8443/CREAM028493431
 	Status        = [DONE-OK]
 	ExitCode      = [0]
 ```
+  3. Get the output `glite-ce-job-output`
