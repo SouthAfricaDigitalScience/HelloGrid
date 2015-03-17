@@ -66,7 +66,7 @@ OutputSandbox = {"hostname.out"};
 # where will the output sandbox be put - usually the same place it runs #
 # Example
 # OutputSandboxBaseDestURI = gsitfp://fs01.grid.uj.ac.za/tmp/
-OutputSandboxBaseDestURI = gsitfp://fs01.grid.uj.ac.za/tmp/;
+OutputSandboxBaseDestURI = "gsiftp://fs01.grid.uj.ac.za/tmp/";
 
 ######################################################
 #ShallowRetryCount                                   #

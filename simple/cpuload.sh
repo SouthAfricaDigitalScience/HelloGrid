@@ -8,7 +8,7 @@
 # Discription: a simple example of a script to get the cpu load.#
 #################################################################
 
-# Changelog 
+# Changelog
 # 27/06/2011 : Bruce Becker | Adding a line to try to move data from the LFC to the WN.
 echo $LFC_HOST
 echo $LFC_TYPE
@@ -30,7 +30,7 @@ DATE=$(date)
 
 echo "$DATE : Testing batch host $HST..."
 echo "test $2"
-echo "$DATE : Io sono $WHOAMI"
+echo "$DATE : I am $WHOAMI"
 echo " we will now make the cpu turn in cute little circles"
 TMP=1
 LOOPSIZE=$1 # should set this with an argument. In this case it takes an argument from the JDL
@@ -42,7 +42,7 @@ echo "starting at $start"
 #########################################################
 #This loop goes from J which is 1 and goes to NMAX which
 #is 3 then for each one
-#the loop goes from 1 to the parameter set in the JDL 
+#the loop goes from 1 to the parameter set in the JDL
 #And changes the TMP variable from its current multiplied
 #by the PArameter set in the JDL in this case 10000
 #Then it itterates I with 1 and when its done it
@@ -73,4 +73,3 @@ echo $LFC_HOST
 echo $LFC_TYPE
 echo $LCG_GFAL_INFOSYS
 lcg-cp -v lfn:/grid/sagrid/portal.tar.gz file:/dev/null
-
