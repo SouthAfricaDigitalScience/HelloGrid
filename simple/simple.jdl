@@ -1,4 +1,4 @@
 [
-executable="/bin/sleep";
-arguments="1";
+Executable="/bin/sleep";
+Arguments="1";
 ]

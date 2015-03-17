@@ -19,6 +19,8 @@ The JDL also tells the grid how to deal with input and output, so that you can t
 
 # Direct submission with CREAM
 
+***Note : We are using the dteam and sagrid.ac.za VOs here - be sure to check that you are using a VO to which you actually belong***
+
   1. Get a proxy: `voms-proxy-init --voms sagrid.ac.za`.
     * Example Output :
 ```bash
@@ -30,5 +32,20 @@ Contacting  voms.sagrid.ac.za:15003 [/C=IT/O=INFN/OU=Host/L=ZA-UFS/CN=voms.sagri
 Creating proxy .............................................................................................. Done
 Your proxy is valid until Wed Mar 18 01:02:55 2015
 ```
-  2. Find an available site: `lcg-infosites --vo sagrid.ac.za ce`  (returns e.g. )
+  2. Find an available site: `lcg-infosites --vo dteam`
+    * Example Output:
+```bash
+lcg-infosites --vo dteam
+#   CPU	   Free	Total Jobs	Running	Waiting	ComputingElement
+----------------------------------------------------------------
+     24	     21	         0	      0	      0	srvslngrd007.uct.ac.za:8443/cream-pbs-sagrid
+```
   2. Submit the job : `glite-ce-job-submit `
+    * Example Output:
+```
+glite-ce-job-status https://glite-ce.grid.uj.ac.za:8443/CREAM028493431
+
+******  JobID=[https://glite-ce.grid.uj.ac.za:8443/CREAM028493431]
+	Status        = [DONE-OK]
+	ExitCode      = [0]
+```

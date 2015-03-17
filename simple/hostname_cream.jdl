@@ -1,0 +1,78 @@
+[
+#######################################################################
+# JDL-Hostname	(direct submission)						      #
+# Version: 1.0							      #
+# Author: Bruce Becker					      #
+# Institute: CSIR Meraka Institute			      #
+# Email: bbecker@csir.co.za			      #
+# Description: The JDL for a simple example of Hostname               # with direct submission
+#######################################################################
+
+############
+#Attributes#
+############
+
+###################################################################################
+#Type										  #
+#This a string representing the type of the request described by the JDL	  #
+#Example:									  #
+#Type = "Job";									  #
+###################################################################################
+Type = "Job";
+
+##########################################################################################
+#JobType                                                                                 #
+#This a string or a list of strings representing the type of the job described by the JDL#
+##########################################################################################
+JobType = "Normal";
+
+################################################################
+#Executables                                                   #
+#This is the name of the script to be run on the Worker Node.  #
+#Example:						       #
+#Executable = "Example.sh";				       #
+################################################################
+Executable = "hostname.sh";
+
+#########################################################
+#InputSandbox 						#
+#Specifies the path where your files should be copied   #
+#Example:						#
+#InputSandbox = "hostname.sh";				#
+#########################################################
+InputSandbox = "hostname.sh";
+
+#########################################################
+#StdOutput and StdError                                 #
+#Specifies the name of where the Output and Error should#
+#be directed						#
+#Example:						#
+#StdOutput = "Example.out";				#
+#StdError = "Example.out";                              #
+#########################################################
+StdOutput = "hostname.out";
+StdError = "hostname.out";
+
+#########################################################
+#OutputSandbox		                                #
+#indicates which files should be put into the output sandbox #
+#Example:                                               #
+#OutputSandbox = {"Example.out"};                       #
+#########################################################
+OutputSandbox = {"hostname.out"};
+
+#########################################################
+# OutputSandboxBaseDestURI
+# where will the output sandbox be put - usually the same place it runs #
+# Example
+# OutputSandboxBaseDestURI = gsitfp://fs01.grid.uj.ac.za/tmp/
+
+######################################################
+#ShallowRetryCount                                   #
+#Specifies the number of retries, in case of failures#
+#Example:
+#ShallowRetryCount = 1;                              #
+######################################################
+ShallowRetryCount = 3;
+
+]
