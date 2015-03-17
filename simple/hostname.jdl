@@ -19,22 +19,13 @@
 #Example:									  #
 #Type = "Job";									  #
 ###################################################################################
-Type = "Job";	
+Type = "Job";
 
 ##########################################################################################
 #JobType                                                                                 #
 #This a string or a list of strings representing the type of the job described by the JDL#
 ##########################################################################################
 JobType = "Normal";
-
-################################################################
-#Executables                                                   #
-#This is the name of the script to be run on the Worker Node.  #
-#Example:                                                      #
-#Executable = "Example.sh";                                    #
-################################################################
-#Requirements = other.GlueCEUniqueID=="glite-ce.grid.uj.ac.za:8443/cream-pbs-sagrid";
-
 
 ################################################################
 #Executables                                                   #
@@ -71,7 +62,7 @@ StdError = "hostname.out";
 #OutputSandbox = {"Example.out"};                       #
 #########################################################
 OutputSandbox = {"hostname.out"};
-#OutputSandboxBaseDestURI = "gsiftp://fs01.grid.uj.ac.za/tmp";
+
 ######################################################
 #ShallowRetryCount                                   #
 #Specifies the number of retries, in case of failures#
